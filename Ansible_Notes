@@ -1,0 +1,12 @@
+* inventory_hostname value is picked from inventory file not FQDN
+
+* When playbook starts, Ansible starts a subprocess for each host and does variable interapolation and gathers all variables related to the host and assigns to it which is used 
+  through out playbook execution.
+  
+ * The output registered in any task is at host scope and hence it is available for that host for all plays of that playbook.
+ 
+ * There is variable precedence and the highest being --extra-vars passed at the command line.. 
+ 
+ * hostvars is a magic variable which can be used to access details of other hosts -- > hostvars['web1'].dns_server
+ 
+ * 
